@@ -16,6 +16,12 @@ with lib; let
       cmd = cfg: ["${cfg.package}/bin/astro-ls" "--stdio"];
     }
     {
+      name = "ansiblels";
+      description = "Enable ansible language server, for Ansible yaml.";
+      package = pkgs.ansible-language-server;
+      cmd = cfg: ["${cfg.package}/bin/ansible-language-server" "--stdio"];
+    }
+    {
       name = "bashls";
       description = "Enable bashls, for bash.";
       package = pkgs.nodePackages.bash-language-server;
