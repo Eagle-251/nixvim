@@ -517,6 +517,13 @@ with lib; let
       package = pkgs.typst-lsp;
     }
     {
+      name = "vls";
+      description = "Enable vls for v";
+      # The v language server has to be installed from v and thus is not packaged "as is" in
+      # nixpkgs.
+      package = null;
+    }
+    {
       name = "vuels";
       description = "Enable vuels, for Vue";
       package = pkgs.nodePackages.vls;
@@ -546,5 +553,6 @@ in {
       ./pylsp.nix
       ./rust-analyzer.nix
       ./svelte.nix
+      ./vls.nix
     ];
 }
