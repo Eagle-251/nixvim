@@ -10,6 +10,12 @@ with lib; let
 
   servers = [
     {
+      name = "ansiblels";
+      description = "Enable ansiblels, for Ansible";
+      package = pkgs.ansible-language-server;
+      cmd = cfg: ["${cfg.package}/bin/ansible-language-server" "--stdio"];
+    }
+    {
       name = "astro";
       description = "Enable astrols, for Astro";
       package = pkgs.nodePackages."@astrojs/language-server";
@@ -163,6 +169,12 @@ with lib; let
       description = "Enable digestif, for LaTeX";
       # luaPackages.digestif is currently broken, using lua54Packages instead
       package = pkgs.lua54Packages.digestif;
+    }
+    {
+      name = "dockerls";
+      description = "Enable dockerls, for Dockerfile";
+      package = pkgs.dockerfile-language-server-nodejs;
+      cmd = cfg: ["${cfg.package}/bin/docker-langserver" "--stdio"];
     }
     {
       name = "efm";
