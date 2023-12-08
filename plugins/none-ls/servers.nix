@@ -27,6 +27,9 @@ with lib; let
       alex = {
         package = pkgs.nodePackages.alex;
       };
+      ansiblelint = {
+        package = pkgs.ansible-lint;
+      };
       cppcheck = {
         package = pkgs.cppcheck;
       };
@@ -57,6 +60,9 @@ with lib; let
       luacheck = {
         package = pkgs.luaPackages.luacheck;
       };
+      markdownlint = {
+        package = pkgs.nodePackages.markdownlint-cli;
+      };
       mypy = {
         package = pkgs.mypy;
       };
@@ -77,6 +83,12 @@ with lib; let
       };
       vulture = {
         package = pkgs.python3Packages.vulture;
+      };
+      write_good = {
+        package = pkgs.write-good;
+      };
+      yamllint = {
+        package = pkgs.yamllint;
       };
     };
     formatting = {
@@ -155,6 +167,8 @@ with lib; let
       taplo = {
         package = pkgs.taplo;
       };
+      trim_newlines = {};
+      trim_whitespace = {};
     };
   };
   # Format the servers to be an array of attrs like the following example
